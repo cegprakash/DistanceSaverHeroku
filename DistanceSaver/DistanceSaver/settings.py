@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'DistanceSaver.DistanceSaver.urls'
+ROOT_URLCONF = 'DistanceSaver.urls'
 
 TEMPLATES = [
     {

@@ -1,1 +1,1 @@
-web: gunicorn DistanceSaver.DistanceSaver.wsgi
+web: gunicorn DistanceSaver.wsgi
