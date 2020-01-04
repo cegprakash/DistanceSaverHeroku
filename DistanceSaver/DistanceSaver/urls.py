@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
 from django.conf.urls import url
+from DistanceSaver.application import urls as app_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('application.urls')),
+    path('', include(app_urls)),
     # url(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 ]
