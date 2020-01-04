@@ -1,1 +1,1 @@
-web: python DistanceSaver/manage.py runserver 0.0.0.0:8080
+web: gunicorn DistanceSaver.DistanceSaver.wsgi
