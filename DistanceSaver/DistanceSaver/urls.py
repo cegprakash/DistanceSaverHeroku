@@ -20,6 +20,6 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app.urls')),
+    path('', include('application.urls')),
     # url(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 ]
