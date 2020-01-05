@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from rest_framework import generics
 from rest_framework import status
 
-from DistanceSaver.application import DistanceSerializer
+from DistanceSaver.application.DistanceSerializer import DistanceSerializer
 from DistanceSaver.application.DistanceClass import DistanceClass
 from DistanceSaver.application import json_response
 
