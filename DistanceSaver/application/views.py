@@ -5,11 +5,9 @@ from rest_framework import generics
 from rest_framework import status
 
 from DistanceSaver.application.DistanceSerializer import DistanceSerializer
-from DistanceSaver.application.DistanceClass import DistanceClass
 from DistanceSaver.application import json_response
 
 # from application.DistanceSerializer import DistanceSerializer
-# from application.DistanceClass import DistanceClass
 # from application import json_response
 
 
@@ -35,10 +33,18 @@ class DistanceView(generics.GenericAPIView):
 
         validated_data = serializer.validated_data
         # print(validated_data)
-        DistanceClass.distance = validated_data['distance']
-        print(DistanceClass.distance)
+        #DistanceClass.distance = validated_data['distance']
+
+        f = open("storage.txt", "w")
+        f.write(str(validated_data['distance']))
+        f.close()
+
+        # print(DistanceClass.distance)
 
         return json_response.success_response(message="created", code=status.HTTP_200_OK)
 
     def get(self, request):
-        return json_response.success_response(message="", data={'distance': DistanceClass.distance}, code=status.HTTP_200_OK)
+        f = open("storage.txt", "r")
+        distance = int(f.read())
+        f.close()
+        return json_response.success_response(message="", data={'distance': distance}, code=status.HTTP_200_OK)
