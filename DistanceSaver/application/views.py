@@ -8,6 +8,11 @@ from DistanceSaver.application import DistanceSerializer
 from DistanceSaver.application.DistanceClass import DistanceClass
 from DistanceSaver.application import json_response
 
+# from application.DistanceSerializer import DistanceSerializer
+# from application.DistanceClass import DistanceClass
+# from application import json_response
+
+
 def format_form_errors(data):
     result = []
     for param, message in data:
@@ -29,7 +34,8 @@ class DistanceView(generics.GenericAPIView):
             return json_response.error_response(errors=format_form_errors(serializer.errors.items()))
 
         validated_data = serializer.validated_data
-        DistanceClass.distance = validated_data.distance
+        # print(validated_data)
+        DistanceClass.distance = validated_data['distance']
         print(DistanceClass.distance)
 
         return json_response.success_response(message="created", code=status.HTTP_200_OK)
