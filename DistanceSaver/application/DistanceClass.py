@@ -1,4 +1,3 @@
 class DistanceClass:
+    distance = 0
     pass
-
-DistanceClass.distance = 0;
